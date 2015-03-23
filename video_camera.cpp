@@ -21,13 +21,19 @@ Camera::Camera(int index ){
 
 Camera::~Camera(){
 
-	cvReleaseCapture(&c_capture);
+	
+	if(suc_flag==true)
+	{
+		cvReleaseCapture(&c_capture);
 
-	c_capture = 0;
+		c_capture = 0;
+		
+		cvReleaseImage(&c_image);
 
-	cvReleaseImage(&c_image);
+		c_image = 0;
+	}
 
-	c_image = 0;
+	
 }
 
 IplImage* Camera::read_from_camera()
@@ -45,7 +51,7 @@ IplImage* Camera::read_from_camera()
 
 Video::Video(std::string filename){
 
-	v_capture = cvCaptureFromAVI(filename.c_str());
+	v_capture = cvCaptureFromFile(filename.c_str());
 
 	if (!v_capture)
 	{

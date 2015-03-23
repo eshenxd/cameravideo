@@ -1,12 +1,12 @@
 #ifndef _VIDEO_CAMERA_H_
 #define _VIDEO_CAMERA_H_
 
-#include "../opencv/include/opencv/cv.h" 
-#include "../opencv/include/opencv/highgui.h"
-
-#pragma comment(lib, "../opencv/lib/opencv_core248d.lib")
-#pragma comment(lib, "../opencv/lib/opencv_highgui248d.lib")
-
+//#include "../opencv/include/opencv/cv.h" 
+//#include "../opencv/include/opencv/highgui.h"
+//
+//#pragma comment(lib, "../opencv/lib/opencv_core248d.lib")
+//#pragma comment(lib, "../opencv/lib/opencv_highgui248d.lib")
+#include "header.h"
 
 class Camera
 {
