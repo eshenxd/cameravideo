@@ -9,13 +9,6 @@ Camera::Camera(int index ){
 	
 	else{
 		suc_flag = true;
-
-		cvGrabFrame(c_capture);
-
-		c_capimg = cvQueryFrame(c_capture);
-
-		c_image = cvCreateImage(cvGetSize(c_capimg), c_capimg->depth, c_capimg->nChannels);
-
 	}
 }
 
@@ -26,11 +19,7 @@ Camera::~Camera(){
 	{
 		cvReleaseCapture(&c_capture);
 
-		c_capture = 0;
-		
-		cvReleaseImage(&c_image);
-
-		c_image = 0;
+		c_capture = NULL;
 	}
 
 	
@@ -39,13 +28,7 @@ Camera::~Camera(){
 IplImage* Camera::read_from_camera()
 {
 	c_capimg = cvQueryFrame(c_capture);
-
-	if (c_capimg->origin == 0)
-		cvCopy(c_capimg, c_image);
-	else
-		cvFlip(c_capimg, c_image);
-
-	return c_image;
+	return c_capimg;
 }
 
 

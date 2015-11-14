@@ -1,11 +1,7 @@
 #ifndef _VIDEO_CAMERA_H_
 #define _VIDEO_CAMERA_H_
 
-//#include "../opencv/include/opencv/cv.h" 
-//#include "../opencv/include/opencv/highgui.h"
-//
-//#pragma comment(lib, "../opencv/lib/opencv_core248d.lib")
-//#pragma comment(lib, "../opencv/lib/opencv_highgui248d.lib")
+
 #include "header.h"
 
 class Camera
@@ -21,7 +17,6 @@ protected:
 private:
 	 CvCapture* c_capture;  /**< Used for function cvQueryFrame */
 	 IplImage* c_capimg;		/**< Original image captured from video */
-	 IplImage *c_image;		/**< Flipped Image captured from video (when nessary) */
 };
 
 class Video
